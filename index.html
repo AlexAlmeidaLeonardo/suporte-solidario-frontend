@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SERVIÇOS DOMICILIARES</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css" link />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+  
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <script src="./bootstrap/js/bootstrap.bundle.js"> </script>
+
+  <script src="./axios.min.js"></script>
+  <script src="./api.js"> </script>
+  <script src="./aplicacao.js"> </script>
+
+  <style>
+    p.truncate-3l {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+
+</head>
+
+<body style="min-width: 372px;">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom shadow-sm mb-3">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html"> <strong> UNIVESP - PROJETO INTEGRADOR</strong> </a>
+
+
+      <div class="navbar-collapse collapse">
+        <ul class="navbar-nav flex-grow-1">
+
+          <li class="nav-item">
+            <a href="#" class="nav-link text-write"></a>
+          </li>
+
+          <li class="nav-item">
+            <a href="" class="nav-link text-write"></a>
+          </li>
+
+          <a href="" class="nav-link text-write"></a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="align-self-end">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a href="index.html" class="nav-link text-write">Início</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="informacoes.html" class="nav-link text-write">Informações</a>
+          </li>
+
+          <!--
+
+          <li class="nav-item">
+            <a href="#" class="nav-link text-write"></a>
+          </li>
+        
+          -->
+
+          <li class="nav-item">
+            <a href="cadastro.html" class="nav-link text-write">Cadastrar</a>
+          </li>
+
+
+        </ul>
+
+      </div>
+    </div>
+
+
+  </nav>
+
+
+  <header class="container">
+    <div id="carouselMain" class="carousel carousel-dark slide" data-ride="carousel">
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active text-center" data-interval="3000">
+          <img src="img/slides/slide01.png" alt="" class="img-fluid d-none d-md-block">
+          <img src="img/slides/slide01small.png" alt="" class="img-fluid d-block d-md-none">
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <hr class="mt-3" />
+
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-5">
+
+          <form class="m-1 justify-content-md-start mb-3 mb-md-0">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" placeholder="Procure o seu munícipio...">
+              <button class="btn btn-danger" onclick="login()" >
+                Buscar
+              </button>
+
+            </div>
+          </form>
+
+
+        </div>
+        <div class="col-12 col-md-7">
+          <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
+
+            <form class="m-1 d-inline-block">
+
+              <select class="form-select form-select-sm">
+                <option> Ordenar pelo nome</option>
+                <option> Ordenar bairros atendidos</option>
+              </select>
+
+            </form>
+            <nav class="m-1 d-inline-block">
+              <ul class="pagination pagination-sm">
+                <li class="page-item disabled">
+                  <button class="page-link">1</button>
+                </li>
+
+                <li class="page-item">
+                  <button class="page-link">2</button>
+                </li>
+
+                <li class="page-item">
+                  <button class="page-link">3</button>
+                </li>
+
+                <li class="page-item">
+                  <button class="page-link">4</button>
+                </li>
+
+
+
+                </li>
+              </ul>
+
+            </nav>
+
+
+          </div>
+
+
+        </div>
+      </div>
+
+      <hr class="mt-1">
+
+      <div class="row g-3">
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Juquitiba.jpg" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">JUQUITIBA</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  ENTRAR EM CONTATO
+                </button>
+              </form>
+
+              <small class="text-success">15 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Osasco.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">OSASCO</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  ENTRAR EM CONTATO
+                </button>
+              </form>
+
+              <small class="text-success">05 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Poá.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">POÁ</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  DESABILITADO
+                </button>
+              </form>
+
+              <small class="text-success">00 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Mogi das Cruzes.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">MOGI DAS CRUZES</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  DESABILITADO
+                </button>
+              </form>
+
+              <small class="text-success">00 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Santo André.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">SANTO ANDRÉ</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  DESABILITADO
+                </button>
+              </form>
+
+              <small class="text-success">00 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Embú das Artes.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">EMBÚ DAS ARTES</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  DESABILITADO
+                </button>
+              </form>
+
+              <small class="text-success">00 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Taboão da Serra.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">TABOÃO DA SERRA</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  DESABILITADO
+                </button>
+              </form>
+
+              <small class="text-success">00 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Curitiba.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">CURITIBA</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  DESABILITADO
+                </button>
+              </form>
+
+              <small class="text-success">00 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Miracatu.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">MIRACATU</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  DESABILITADO
+                </button>
+              </form>
+
+              <small class="text-success">00 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Peruíbe.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">PERUÍBE</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  DESABILITADO
+                </button>
+              </form>
+
+              <small class="text-success">00 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Itapecerica da Serra.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">ITAP. DA SERRA</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  DESABILITADO
+                </button>
+              </form>
+
+              <small class="text-success">00 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center bg-light">
+
+
+
+            <img src="img/municípios/Campinas.png" class="card-img-top">
+
+            <div class="card-header">
+              <h3 class="card-title">CAMPINAS</h3>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-text">LOCAIS:</h5>
+              <p class="card-text truncate-3l"> Padaria, Supermercado, Farmácia, Hospital, Outros.
+
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-danger">
+                  DESABILITADO
+                </button>
+              </form>
+
+              <small class="text-success">00 PRESTADORES P/ ATENDIMENTO.</small>
+
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+      <hr class="mt-3">
+      <div class="row pb-4">
+        <div class="col-12">
+          <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
+
+            <form class="m-1 d-inline-block">
+
+              <select class="form-select form-select-sm">
+                <option> Ordenar pelo nome</option>
+                <option> Ordenar bairros atendidos</option>
+              </select>
+
+            </form>
+            <nav class="m-1 d-inline-block">
+              <ul class="pagination pagination-sm">
+                <li class="page-item disabled">
+                  <button class="page-link">1</button>
+                </li>
+
+                <li class="page-item">
+                  <button class="page-link">2</button>
+                </li>
+
+                <li class="page-item">
+                  <button class="page-link">3</button>
+                </li>
+
+                <li class="page-item">
+                  <button class="page-link">4</button>
+                </li>
+
+
+
+                </li>
+              </ul>
+
+            </nav>
+
+
+          </div>
+
+        </div>
+      </div>
+  </main>
+
+  <div style="height: 273px;" class="d-block d-md-none"></div>
+  <div style="height: 153px;" class="d-none d-md-block d-lg-none"></div>
+  <div style="height: 129px;" class="d-nome d-lg-block"></div>
+
+  <footer class="border-top fixed-bottom text-muted bg-light">
+    <div class="row py-2">
+      <div class="col-12 col-md-4 text-center text-md-left">
+        &copy; UNIVESP - Projeto Integrador - 2024
+      </div>
+      <div class="col-12 col-md-4 text-center">
+        <a href="privacidade.html" class="text-decoration-none text-dark ">Política de Privacidade</a>
+      </div>
+      <div class="col-12 col-md-4 text-center text-md-rigth">
+        <a href="quemsomos.html" class="text-decoration-none text-dark ">Quem somos & Contato</a>
+      </div>
+
+    </div>
+
+    </div>
+
+
+  </footer>
+
+
+
+</body>
+
+</html>
